@@ -1,0 +1,19 @@
+<p>Loans</p>
+<div class="col-md-4" *ngFor="let l of loans">
+  <div class="card text-center">
+    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+      Loan
+    </div>
+    <div class="card-body">
+      <p>Date request: {{l.date_request}}</p>
+      <p>Amount request: {{l.request_amount}}</p>
+      <a [routerLink]="['/loan/edit', l.id]" class="btn btn-info btn-block">
+        Edit Loan
+      </a><p></p>
+      <button class="btn btn-danger" (ngSubmit)="DeleteLoan(l.id)">
+        Delete
+      </button>
+    </div>
+  </div>
+  <br>
+</div>
